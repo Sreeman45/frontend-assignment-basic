@@ -43,7 +43,7 @@ const LoginSignup: FC = () => {
       const a=emailInput(email); // Run validation & get result
      const b=passwordInput(password); // Run validation & get result
    if(!a  || !b){
-        return setemailError('please  enter valid details')
+        return
    }
     if (!emailerror && !passworderror) {
       localStorage.setItem("email", email);
