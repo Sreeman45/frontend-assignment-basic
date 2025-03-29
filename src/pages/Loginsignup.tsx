@@ -35,8 +35,8 @@ const LoginSignup: FC = () => {
     console.log(passworderror)
   }
   const handlesignup=()=>{
-    const emailValid:any = emailInput(email); // Run validation & get result
-    const passwordValid:any= passwordInput(password); // Run validation & get result
+      emailInput(email); // Run validation & get result
+     passwordInput(password); // Run validation & get result
   
     if (!emailerror && !passworderror) {
       localStorage.setItem("email", email);
