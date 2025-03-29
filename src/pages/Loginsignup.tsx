@@ -10,6 +10,7 @@ const LoginSignup: FC = () => {
   const emailInput=(value:any)=>{
     if(!value){
       return setemailError('Please provide an email')
+      
     }
     let localitem=localStorage.getItem('email')
     if(value === localitem ){
@@ -20,7 +21,9 @@ const LoginSignup: FC = () => {
       return setemailError('Invalid email format')
     }
     else{
-      return setemailError('')
+       setemailError('');
+       return true;
+
     }
   }
   const passwordInput=(value:any)=>{
@@ -29,16 +32,18 @@ const LoginSignup: FC = () => {
 
     if (!passwordRegex.test(value)) {
       setPasswordError('Password must be at least 8 characters, and contain at least one letter and one number');
+      return false;
     } else {
       setPasswordError('');
+      return true
     }
     console.log(passworderror)
   }
   const handlesignup=()=>{
       const a=emailInput(email); // Run validation & get result
      const b=passwordInput(password); // Run validation & get result
-   if(a == null && b==null){
-    console.log('anything')
+   if(!a  || !b){
+        return setemailError('please  enter valid details')
    }
     if (!emailerror && !passworderror) {
       localStorage.setItem("email", email);
