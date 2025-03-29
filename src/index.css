@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+.fullbgcolor{
+    background-color: rgb(51, 213, 213);
+}
+.boxcolor{
+    background-color: rgb(197 244 244 / 89%);
+}
+.no-overscroll-div-x {
+    overscroll-behavior-x: contain;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
