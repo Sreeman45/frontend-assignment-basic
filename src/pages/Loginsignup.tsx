@@ -31,8 +31,8 @@ const LoginSignup: FC = () => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if (!passwordRegex.test(value)) {
-      setPasswordError('Password must be at least 8 characters, and contain at least one letter and one number');
-      return false;
+      return setPasswordError('Password must be at least 8 characters, and contain at least one letter and one number');
+      
     } else {
       setPasswordError('');
       return true
@@ -42,8 +42,10 @@ const LoginSignup: FC = () => {
   const handlesignup=()=>{
       const a=emailInput(email); // Run validation & get result
      const b=passwordInput(password); // Run validation & get result
-   if(!a  || !b){
-        return
+   if(!a || !b){
+       console.log('yes')
+       return
+       
    }
     if (!emailerror && !passworderror) {
       localStorage.setItem("email", email);
